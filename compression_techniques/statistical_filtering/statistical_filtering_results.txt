@@ -1,0 +1,88 @@
+### Overview of Statistical Filtering ###
+Statistical filtering is a noise reduction technique that removes outlier points based on statistical analysis of the local neighborhood. By examining the average distance to neighbors and removing points that deviate significantly, this method ensures a cleaner point cloud.
+
+### Key Features ###
+1. **Noise Removal**: Eliminates sparse or isolated points.
+2. **Improves Data Quality**: Suitable for preprocessing before further operations.
+3. **Customizable Parameters**: Number of neighbors and standard deviation ratio can be adjusted.
+
+### Parameter Explanations ###
+1. **nb_neighbors (Number of Neighbors)**:
+   - Defines the number of nearest neighbors to consider for each point.
+   - Higher values:
+     - Capture a larger local neighborhood.
+     - Outlier removal becomes less sensitive, resulting in fewer points being removed.
+   - Lower values:
+     - Capture a smaller local neighborhood.
+     - Outlier removal becomes more sensitive, potentially removing more points.
+2. **std_ratio (Standard Deviation Multiplier)**:
+   - Sets the threshold for outlier classification as a multiplier of the standard deviation.
+   - Higher values:
+     - Relax the threshold, tolerating more deviation and removing fewer points.
+   - Lower values:
+     - Tighten the threshold, allowing only points close to their neighbors to remain.
+
+### Choosing Parameters ###
+1. High Noise Data:
+   - Use low `nb_neighbors` and low `std_ratio` for aggressive filtering.
+2. Low Noise Data:
+   - Use high `nb_neighbors` and high `std_ratio` for gentle filtering.
+
+Original Point Count: 2332800
+Number of Invalid Points Removed: 590299
+Cleaned Point Count: 1742501
+
+Testing nb_neighbors: 10, std_ratio: 1.0
+  Filtered Point Count: 1343470
+  Compression Ratio: 1.74
+  Processing Time: 0.68 seconds
+  Saved as: statistical_filtered_nb_10_std_1.0.ply
+
+Testing nb_neighbors: 10, std_ratio: 2.0
+  Filtered Point Count: 1673461
+  Compression Ratio: 1.39
+  Processing Time: 0.75 seconds
+  Saved as: statistical_filtered_nb_10_std_2.0.ply
+
+Testing nb_neighbors: 10, std_ratio: 3.0
+  Filtered Point Count: 1709134
+  Compression Ratio: 1.36
+  Processing Time: 0.73 seconds
+  Saved as: statistical_filtered_nb_10_std_3.0.ply
+
+Testing nb_neighbors: 20, std_ratio: 1.0
+  Filtered Point Count: 1343032
+  Compression Ratio: 1.74
+  Processing Time: 0.89 seconds
+  Saved as: statistical_filtered_nb_20_std_1.0.ply
+
+Testing nb_neighbors: 20, std_ratio: 2.0
+  Filtered Point Count: 1672486
+  Compression Ratio: 1.39
+  Processing Time: 0.84 seconds
+  Saved as: statistical_filtered_nb_20_std_2.0.ply
+
+Testing nb_neighbors: 20, std_ratio: 3.0
+  Filtered Point Count: 1705229
+  Compression Ratio: 1.37
+  Processing Time: 0.82 seconds
+  Saved as: statistical_filtered_nb_20_std_3.0.ply
+
+Testing nb_neighbors: 30, std_ratio: 1.0
+  Filtered Point Count: 1343302
+  Compression Ratio: 1.74
+  Processing Time: 0.94 seconds
+  Saved as: statistical_filtered_nb_30_std_1.0.ply
+
+Testing nb_neighbors: 30, std_ratio: 2.0
+  Filtered Point Count: 1674073
+  Compression Ratio: 1.39
+  Processing Time: 0.93 seconds
+  Saved as: statistical_filtered_nb_30_std_2.0.ply
+
+Testing nb_neighbors: 30, std_ratio: 3.0
+  Filtered Point Count: 1706226
+  Compression Ratio: 1.37
+  Processing Time: 0.91 seconds
+  Saved as: statistical_filtered_nb_30_std_3.0.ply
+

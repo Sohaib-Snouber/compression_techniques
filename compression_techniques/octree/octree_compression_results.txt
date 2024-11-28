@@ -1,0 +1,40 @@
+### Overview of Octree Compression ###
+Octree compression is a hierarchical representation method that divides a 3D space into smaller subspaces called octants. Starting with a root node representing the entire space, the method recursively subdivides each octant into eight smaller octants, stopping at a predefined depth. The depth determines the level of detail.
+
+### Key Features ###
+1. **Hierarchical Representation**: Efficiently represents 3D space in a tree structure.
+2. **Compression**: Reduces point count by approximating multiple points within a voxel.
+3. **Applications**: Commonly used in rendering, storage, and transmission of large 3D datasets.
+
+### Mathematical Concept ###
+Each node in the octree represents a voxel, defined by its origin and size. The mathematical basis involves:
+  - **Subdivision**: Divide each voxel into eight smaller ones, represented by the formula:
+    Voxel_center[i] = Voxel_origin + (i * Voxel_size / 2), for i in {0, ..., 7}
+  - **Storage**: Store points in leaf nodes, which represent the smallest voxels.
+  - **Reconstruction**: Use the center of each voxel or average of contained points for reconstruction.
+
+Original Point Count: 2332800
+Number of Invalid Points Removed: 590299
+Cleaned Point Count: 1742501
+
+Testing Octree Depth: 4
+  Reconstructed Point Count: 211
+  Compression Ratio: 11055.92
+  Processing Time: 0.84 seconds
+  Fidelity Loss (Chamfer Distance): 0.090358
+  Saved as: octree_reconstructed_depth_4.ply
+
+Testing Octree Depth: 6
+  Reconstructed Point Count: 2313
+  Compression Ratio: 1008.56
+  Processing Time: 1.04 seconds
+  Fidelity Loss (Chamfer Distance): 0.021327
+  Saved as: octree_reconstructed_depth_6.ply
+
+Testing Octree Depth: 8
+  Reconstructed Point Count: 32366
+  Compression Ratio: 72.08
+  Processing Time: 1.69 seconds
+  Fidelity Loss (Chamfer Distance): 0.005593
+  Saved as: octree_reconstructed_depth_8.ply
+

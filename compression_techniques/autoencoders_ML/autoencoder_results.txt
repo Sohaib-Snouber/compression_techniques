@@ -1,0 +1,15 @@
+### Autoencoder Compression Results ###
+Autoencoders are neural networks designed to compress data into a latent space and reconstruct it.
+
+### Key Parameters ###
+Latent Dimensionality: 128
+Number of Original Points: 2332800
+Number of Valid Points: 1742501
+Batch Size: 1024
+Number of Epochs: 100
+
+### Results ###
+Training Time: 1.02 seconds
+Compression Time: 2.89 seconds
+Reconstruction Time: 3.62 seconds
+Reconstructed Point Cloud File: reconstructed_autoencoder.ply

@@ -1,0 +1,18 @@
+### Overview of Plane Fitting (Region Growing) ###
+Plane fitting is a segmentation technique to extract planar surfaces from point clouds. Using RANSAC, the algorithm iteratively estimates the parameters of a plane by minimizing the distance of inliers to the plane. Region growing can expand the segmented plane by clustering neighboring points with similar normals.
+
+### Key Parameters ###
+1. **Distance Threshold**:
+   - Defines the maximum distance a point can have to the plane to be considered an inlier.
+   - Smaller values: More precise plane fitting but fewer inliers.
+   - Larger values: More inliers but risks over-segmentation.
+2. **Number of Iterations**:
+   - Higher values lead to better plane fitting but slower computation.
+3. **Region Growing (Normal Similarity)**:
+   - Clusters points based on proximity and similarity in normal vectors to expand planar regions.
+
+Original Point Count: 0
+Number of Invalid Points Removed: 0
+Cleaned Point Count: 0
+
+Testing distance_threshold: 0.01, num_iterations: 500

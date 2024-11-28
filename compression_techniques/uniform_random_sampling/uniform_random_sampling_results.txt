@@ -1,0 +1,33 @@
+### Overview of Uniform/Random Sampling ###
+Sampling simplifies the point cloud by selecting a subset of points. Uniform sampling selects points at regular intervals, preserving structure, while random sampling selects points randomly, suitable for unstructured data.
+
+### Mathematical Concept ###
+1. **Uniform Sampling**:
+   - Uniform sampling selects every `n`th point from the dataset, where `n` is the sampling ratio.
+   - Mathematically, the indices of selected points are:
+       I = {i | i mod n == 0, i ∈ {0, 1, ..., N-1}}
+     where N is the total number of points, and n is the uniform sampling ratio.
+2. **Random Sampling**:
+   - Random sampling selects a fixed percentage of points (`p`), chosen randomly.
+   - Mathematically, a subset of size k = p * N is selected uniformly at random:
+       S ⊆ {0, 1, ..., N-1}, |S| = k
+     where N is the total number of points, and p is the random sampling ratio.
+
+### Parameters ###
+Uniform Ratio: 10
+Random Ratio: 0.1
+
+Original Point Count: 2332800
+Number of Invalid Points Removed: 590299
+Cleaned Point Count: 1742501
+
+### Uniform Sampling Results ###
+Uniform Sampled Point Count: 174251
+Uniform Sampling Time: 0.02 seconds
+Uniform Sampled Point Cloud File: uniform_sampled_point_cloud.ply
+
+### Random Sampling Results ###
+Random Sampled Point Count: 174250
+Random Sampling Time: 0.05 seconds
+Random Sampled Point Cloud File: random_sampled_point_cloud.ply
+

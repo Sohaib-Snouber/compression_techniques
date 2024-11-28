@@ -1,0 +1,14 @@
+### Overview of Wavelet Transform ###
+Wavelet Transform compresses point cloud data by decomposing it into approximation and detail coefficients. Significant coefficients are retained, and minor ones are discarded, achieving lossy compression with a focus on preserving major variations.
+
+### Parameters ###
+Wavelet Type: haar
+Threshold: 0.01
+
+Original Point Count: 2332800
+Cleaned Point Count: 1742501
+Compression Time: 0.71 seconds
+Reconstruction Time: 0.37 seconds
+Compressed File Size: 57057073 bytes
+Compressed File Saved As: wavelet_compressed_points.json
+Reconstructed Point Cloud File: wavelet_decompressed_point_cloud.ply

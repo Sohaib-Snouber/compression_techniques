@@ -1,0 +1,17 @@
+### Overview of PCA Compression ###
+Principal Component Analysis (PCA) reduces data dimensionality by projecting points and colors onto the most significant axes of variation. This retains the structure and appearance of the data while reducing redundancy and minimizing storage size.
+
+### Mathematical Concept ###
+1. **Compression**:
+   - PCA computes the covariance matrix of the data (points + colors), extracting eigenvectors (principal axes) and eigenvalues (variance).
+   - Data is projected onto these axes to create a transformed (compressed) representation.
+2. **Decompression**:
+   - Transformed data is projected back onto the original space using the inverse of the PCA transformation.
+
+### Results ###
+Original Point Count: 2332800
+Cleaned Point Count: 1742501
+PCA Compression Time: 0.08 seconds
+PCA Decompression Time: 0.16 seconds
+Compressed File Size: pca_compressed_points_with_colors.npz
+Reconstructed Point Cloud File: pca_decompressed_point_cloud_with_colors.ply

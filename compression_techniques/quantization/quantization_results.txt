@@ -1,0 +1,27 @@
+### Overview of Quantization ###
+Quantization reduces the precision of point cloud coordinates to compress data size. This is achieved by rounding coordinates to the nearest multiple of a given resolution.
+
+### Key Parameters ###
+1. **Resolution**:
+   - Specifies the granularity of the quantized values (e.g., 0.001 for millimeter precision).
+   - Higher resolution retains more detail but compresses less.
+
+Original Point Count: 2332800
+Number of Invalid Points Removed: 590299
+Cleaned Point Count: 1742501
+
+Testing Resolution: 0.01
+  Quantized Point Count: 1742501
+  Processing Time: 0.04 seconds
+  Saved as: quantized_resolution_0_01.ply
+
+Testing Resolution: 0.005
+  Quantized Point Count: 1742501
+  Processing Time: 0.02 seconds
+  Saved as: quantized_resolution_0_005.ply
+
+Testing Resolution: 0.001
+  Quantized Point Count: 1742501
+  Processing Time: 0.02 seconds
+  Saved as: quantized_resolution_0_001.ply
+

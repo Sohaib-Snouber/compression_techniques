@@ -1,0 +1,40 @@
+### Overview of Voxel Downsampling ###
+Voxel downsampling is a geometric simplification technique that groups points within fixed-size 3D cubes (voxels) and replaces them with a representative point, typically the centroid. This method effectively reduces the number of points while retaining the overall structure of the point cloud.
+
+### Key Features ###
+1. **Simplification**: Reduces the number of points in dense areas.
+2. **Efficiency**: Improves performance in tasks such as rendering, storage, and processing.
+3. **Customizable Granularity**: The voxel size determines the level of detail retained.
+
+### Mathematical Concept ###
+1. **Voxel Indexing**: Each point in the cloud is assigned to a voxel based on its coordinates:
+    Voxel_index = floor(Point_coordinate / Voxel_size)
+2. **Representative Point**: The points within each voxel are replaced with a single point, such as the centroid:
+    Centroid = mean(Points_in_voxel)
+3. **Color Retention**: The color of the representative point is computed as the average color of all points in the voxel.
+
+Original Point Count: 2332800
+Number of Invalid Points Removed: 590299
+Cleaned Point Count: 1742501
+
+Testing Voxel Size: 0.001 meters
+  Downsampled Point Count: 505473
+  Compression Ratio: 4.62
+  Processing Time: 0.23 seconds
+  Fidelity Loss (Chamfer Distance): 0.000420
+  Saved as: voxel_downsampled_0.001.ply
+
+Testing Voxel Size: 0.005 meters
+  Downsampled Point Count: 29213
+  Compression Ratio: 79.85
+  Processing Time: 0.02 seconds
+  Fidelity Loss (Chamfer Distance): 0.002203
+  Saved as: voxel_downsampled_0.005.ply
+
+Testing Voxel Size: 0.01 meters
+  Downsampled Point Count: 7858
+  Compression Ratio: 296.87
+  Processing Time: 0.01 seconds
+  Fidelity Loss (Chamfer Distance): 0.003970
+  Saved as: voxel_downsampled_0.01.ply
+

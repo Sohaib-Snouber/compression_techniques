@@ -1,0 +1,59 @@
+### Overview of Plane Fitting (Region Growing) ###
+Plane fitting is a segmentation technique to extract planar surfaces from point clouds. Using RANSAC, the algorithm iteratively estimates the parameters of a plane by minimizing the distance of inliers to the plane. Region growing can expand the segmented plane by clustering neighboring points with similar normals.
+
+### Key Parameters ###
+1. **Distance Threshold**:
+   - Defines the maximum distance a point can have to the plane to be considered an inlier.
+   - Smaller values: More precise plane fitting but fewer inliers.
+   - Larger values: More inliers but risks over-segmentation.
+2. **Number of Iterations**:
+   - Higher values lead to better plane fitting but slower computation.
+3. **Region Growing (Normal Similarity)**:
+   - Clusters points based on proximity and similarity in normal vectors to expand planar regions.
+
+Original Point Count: 2332800
+Number of Invalid Points Removed: 590299
+Cleaned Point Count: 1742501
+
+Testing distance_threshold: 0.01, num_iterations: 500
+  Plane Model Coefficients: [ 0.00826531  0.03230163  0.99944399 -0.00586477]
+  Number of Inliers: 1250672
+  Processing Time: 0.10 seconds
+  Saved Plane Inliers as: plane_inliers_dist_0.01_iter_500.ply
+  Saved Remaining Points as: plane_outliers_dist_0.01_iter_500.ply
+
+Testing distance_threshold: 0.01, num_iterations: 1000
+  Plane Model Coefficients: [-0.00282502  0.02975306  0.99955329 -0.00470931]
+  Number of Inliers: 1241994
+  Processing Time: 0.11 seconds
+  Saved Plane Inliers as: plane_inliers_dist_0.01_iter_1000.ply
+  Saved Remaining Points as: plane_outliers_dist_0.01_iter_1000.ply
+
+Testing distance_threshold: 0.01, num_iterations: 10000
+  Plane Model Coefficients: [ 0.00395593  0.03698937  0.99930783 -0.00788333]
+  Number of Inliers: 1273442
+  Processing Time: 0.12 seconds
+  Saved Plane Inliers as: plane_inliers_dist_0.01_iter_10000.ply
+  Saved Remaining Points as: plane_outliers_dist_0.01_iter_10000.ply
+
+Testing distance_threshold: 0.014, num_iterations: 500
+  Plane Model Coefficients: [ 0.00447143  0.02939055  0.999558   -0.00408923]
+  Number of Inliers: 1301766
+  Processing Time: 0.10 seconds
+  Saved Plane Inliers as: plane_inliers_dist_0.014_iter_500.ply
+  Saved Remaining Points as: plane_outliers_dist_0.014_iter_500.ply
+
+Testing distance_threshold: 0.014, num_iterations: 1000
+  Plane Model Coefficients: [ 0.00143115  0.03222237  0.9994797  -0.0050261 ]
+  Number of Inliers: 1334386
+  Processing Time: 0.10 seconds
+  Saved Plane Inliers as: plane_inliers_dist_0.014_iter_1000.ply
+  Saved Remaining Points as: plane_outliers_dist_0.014_iter_1000.ply
+
+Testing distance_threshold: 0.014, num_iterations: 10000
+  Plane Model Coefficients: [ 0.00143155  0.03222181  0.99947972 -0.00502592]
+  Number of Inliers: 1334391
+  Processing Time: 0.10 seconds
+  Saved Plane Inliers as: plane_inliers_dist_0.014_iter_10000.ply
+  Saved Remaining Points as: plane_outliers_dist_0.014_iter_10000.ply
+

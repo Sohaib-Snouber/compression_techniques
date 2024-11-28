@@ -1,0 +1,51 @@
+### Overview of Clustering Simplification ###
+Clustering simplification is a geometric grouping method where points in the point cloud are grouped into clusters based on proximity. Each cluster can then be simplified, typically by representing it with its centroid or another reduced form.
+
+### Key Parameters ###
+1. **eps (Cluster Radius)**:
+   - Maximum distance between two points to be considered part of the same cluster.
+   - Smaller values result in more, smaller clusters. Larger values result in fewer, larger clusters.
+2. **min_points (Minimum Points per Cluster)**:
+   - Minimum number of points required to form a cluster.
+   - Smaller values allow tiny clusters, while larger values filter out noise and small clusters.
+
+### Mathematical Concept ###
+Clusters are formed using DBSCAN, which groups points based on density. For each cluster, a centroid can be computed as the representative point:
+    C = (1/n) * sum(P_i), for i in 1 to n
+
+Original Point Count: 2332800
+Number of Invalid Points Removed: 590299
+Cleaned Point Count: 1742501
+
+Downsampled Point Count: 29213
+
+Testing eps: 0.01, min_points: 10
+  Number of Clusters Detected: 26
+  Processing Time: 0.03 seconds
+  Saved as: clustered_eps_0.01_min_10.ply
+
+Testing eps: 0.01, min_points: 20
+  Number of Clusters Detected: 133
+  Processing Time: 0.04 seconds
+  Saved as: clustered_eps_0.01_min_20.ply
+
+Testing eps: 0.03, min_points: 10
+  Number of Clusters Detected: 5
+  Processing Time: 0.10 seconds
+  Saved as: clustered_eps_0.03_min_10.ply
+
+Testing eps: 0.03, min_points: 20
+  Number of Clusters Detected: 4
+  Processing Time: 0.11 seconds
+  Saved as: clustered_eps_0.03_min_20.ply
+
+Testing eps: 0.05, min_points: 10
+  Number of Clusters Detected: 4
+  Processing Time: 0.20 seconds
+  Saved as: clustered_eps_0.05_min_10.ply
+
+Testing eps: 0.05, min_points: 20
+  Number of Clusters Detected: 4
+  Processing Time: 0.21 seconds
+  Saved as: clustered_eps_0.05_min_20.ply
+
